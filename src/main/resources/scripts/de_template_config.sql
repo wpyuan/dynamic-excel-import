@@ -1,0 +1,35 @@
+CREATE TABLE DE_TEMPLATE_CONFIG
+(
+    TEMPLATE_CONFIG_ID bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    TEMPLATE_CONFIG_CODE varchar(30) NOT NULL COMMENT '模板代码',
+    TEMPLATE_CONFIG_NAME varchar(150) NOT NULL COMMENT '模板名称',
+    URL varchar(255) COMMENT '模板文件地址',
+    ENABLE_FLAG varchar(1) DEFAULT 'Y' NOT NULL COMMENT '是否启用',
+    NOT_ENABLED_REASON varchar(255) COMMENT '未启用原因',
+    OBJECT_VERSION_NUMBER bigint default '1'                 null,
+    REQUEST_ID            bigint default '-1'                null,
+    PROGRAM_ID            bigint default '-1'                null,
+    CREATED_BY            bigint default '-1'                null,
+    CREATION_DATE         datetime default CURRENT_TIMESTAMP null,
+    LAST_UPDATED_BY       bigint default '-1'                null,
+    LAST_UPDATE_DATE      datetime default CURRENT_TIMESTAMP null,
+    LAST_UPDATE_LOGIN     bigint default '-1'                null,
+    ATTRIBUTE_CATEGORY    varchar(30)                        null,
+    ATTRIBUTE1            varchar(240)                       null,
+    ATTRIBUTE2            varchar(240)                       null,
+    ATTRIBUTE3            varchar(240)                       null,
+    ATTRIBUTE4            varchar(240)                       null,
+    ATTRIBUTE5            varchar(240)                       null,
+    ATTRIBUTE6            varchar(240)                       null,
+    ATTRIBUTE7            varchar(240)                       null,
+    ATTRIBUTE8            varchar(240)                       null,
+    ATTRIBUTE9            varchar(240)                       null,
+    ATTRIBUTE10           varchar(240)                       null,
+    ATTRIBUTE11           varchar(240)                       null,
+    ATTRIBUTE12           varchar(240)                       null,
+    ATTRIBUTE13           varchar(240)                       null,
+    ATTRIBUTE14           varchar(240)                       null,
+    ATTRIBUTE15           varchar(240)                       null
+);
+CREATE UNIQUE INDEX DE_TEMPLATE_CONFIG_TEMPLATE_CONFIG_CODE_uindex ON TEMPLATE_CONFIG (TEMPLATE_CONFIG_CODE);
+ALTER TABLE DE_TEMPLATE_CONFIG COMMENT = '模块配置';

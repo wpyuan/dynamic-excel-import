@@ -1,0 +1,36 @@
+CREATE TABLE DE_DATA_SOURCE
+(
+    DATA_SOURCE_ID bigint PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    DATA_SOURCE_NAME varchar(20) NOT NULL COMMENT '数据源名称',
+    DB_TYPE varchar(20) DEFAULT 'MYSQL' NOT NULL COMMENT '数据库类型',
+    DRIVER VARCHAR(50) DEFAULT 'com.mysql.jdbc.Driver' NOT NULL COMMENT '数据库驱动名',
+    URL VARCHAR(255) NOT NULL COMMENT '地址',
+    USER_NAME varchar(100) NOT NULL COMMENT '用户名',
+    PASSWORD varchar(100) DEFAULT '' NOT NULL COMMENT '密码',
+    OBJECT_VERSION_NUMBER bigint default '1'                 null,
+    REQUEST_ID            bigint default '-1'                null,
+    PROGRAM_ID            bigint default '-1'                null,
+    CREATED_BY            bigint default '-1'                null,
+    CREATION_DATE         datetime default CURRENT_TIMESTAMP null,
+    LAST_UPDATED_BY       bigint default '-1'                null,
+    LAST_UPDATE_DATE      datetime default CURRENT_TIMESTAMP null,
+    LAST_UPDATE_LOGIN     bigint default '-1'                null,
+    ATTRIBUTE_CATEGORY    varchar(30)                        null,
+    ATTRIBUTE1            varchar(240)                       null,
+    ATTRIBUTE2            varchar(240)                       null,
+    ATTRIBUTE3            varchar(240)                       null,
+    ATTRIBUTE4            varchar(240)                       null,
+    ATTRIBUTE5            varchar(240)                       null,
+    ATTRIBUTE6            varchar(240)                       null,
+    ATTRIBUTE7            varchar(240)                       null,
+    ATTRIBUTE8            varchar(240)                       null,
+    ATTRIBUTE9            varchar(240)                       null,
+    ATTRIBUTE10           varchar(240)                       null,
+    ATTRIBUTE11           varchar(240)                       null,
+    ATTRIBUTE12           varchar(240)                       null,
+    ATTRIBUTE13           varchar(240)                       null,
+    ATTRIBUTE14           varchar(240)                       null,
+    ATTRIBUTE15           varchar(240)                       null
+);
+ALTER TABLE DE_DATA_SOURCE COMMENT = '数据源配置';
+CREATE UNIQUE INDEX DE_DATA_SOURCE_DATA_SOURCE_NAME_uindex ON DE_DATA_SOURCE (DATA_SOURCE_NAME);
